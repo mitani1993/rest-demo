@@ -20,4 +20,12 @@ public class ItemService {
     public List<Item> getAItems() {
         return allItems;
     }
+
+    public Item getItem(String itemId) {
+        for (Item item : allItems) {
+            if (item.getItemId().equals(itemId))
+                return item;
+        }
+        return null;
+    }
 }

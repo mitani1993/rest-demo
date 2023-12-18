@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class ItemController {
@@ -20,4 +21,10 @@ public class ItemController {
     public List<Item> getAllItems() {
         return itemService.getAItems();
     }
+
+    @GetMapping("/items/{itemId}")
+    public Item getItem(@PathVariable String itemId) {
+        return itemService.getItem(itemId);
+    }
+
 }
