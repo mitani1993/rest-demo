@@ -8,6 +8,7 @@ import com.example.restdemo.model.Item;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,5 +39,10 @@ public class ItemController {
     @PutMapping("items/{itemId}")
     public void updateItem(@PathVariable String itemId, @RequestBody Item item) {
         itemService.updateItem(itemId, item);
+    }
+
+    @DeleteMapping("items/{itemId}")
+    public void deleteItem(@PathVariable String itemId) {
+        itemService.deleteItem(itemId);
     }
 }
